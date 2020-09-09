@@ -1,5 +1,6 @@
 import { Router, urlencoded, response } from 'express';
 import CreateUserService from '../services/CreateUserService';
+import UpdateUserAvatarService from '../services/UpdateUserAvatarService';
 import multer from 'multer';
 import uploadConfig from '../config/upload';
 
@@ -30,7 +31,21 @@ usersRouter.post('/', async (request, response) => {
 });
 
 usersRouter.patch('/avatar', ensureAuthenticated, upload.single('avatar'), async (request, response) => {
-  return response.json({ ok: true });
+  try {
+    const updateUserAvatar = new UpdateUserAvatarService();
+    // Await, pois preciso terminar de executar antes de retornar resposta para o ususário
+    const user = await updateUserAvatar.execute({
+      user_id: request.user.id,
+      avatarFilename: request.file.filename,
+    });
+
+    delete user.password;
+
+    return response.json(user);
+
+  } catch (err) {
+    return response.status(400).json({ error: err.message });
+  }
 });
 
 export default usersRouter;
