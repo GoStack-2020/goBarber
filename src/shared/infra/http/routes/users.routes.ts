@@ -1,10 +1,10 @@
 import { Router, urlencoded, response } from 'express';
-import CreateUserService from '../../modules/users/services/CreateUserService';
-import UpdateUserAvatarService from '../../modules/users/services/UpdateUserAvatarService';
+import CreateUserService from '../../../../../modules/users/services/CreateUserService';
+import UpdateUserAvatarService from '../../../../../modules/users/services/UpdateUserAvatarService';
 import multer from 'multer';
-import uploadConfig from '../../config/upload';
+import uploadConfig from '../../../../../config/upload';
 
-import ensureAuthenticated from '../middlewares/ensureAuthenticated';
+import ensureAuthenticated from '../infra/database/middlewares/ensureAuthenticated';
 
 const usersRouter = Router();
 const upload = multer(uploadConfig);

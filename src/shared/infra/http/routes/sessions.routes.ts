@@ -1,5 +1,5 @@
 import { Router, urlencoded } from 'express';
-import AuthenticateUserService from '../../modules/users/services/AuthenticateUserSerivce';
+import AuthenticateUserService from '../../../../../modules/users/services/AuthenticateUserSerivce';
 const sessionsRouter = Router();
 
 // Rota recebendo requisição
