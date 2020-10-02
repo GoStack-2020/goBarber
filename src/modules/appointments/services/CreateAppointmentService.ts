@@ -1,4 +1,4 @@
-import Appointment from '../entities/Appointment';
+import Appointment from '../infra/typeorm/Appointment';
 import AppointmentsRepository from '../../appointments/repositories/AppointmentsRepository';
 import { startOfHour } from 'date-fns';
 import { getCustomRepository } from 'typeorm';

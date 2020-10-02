@@ -1,4 +1,4 @@
-import Appointment from "../../modules/appointments/entities/Appointment";
+import Appointment from "../../modules/appointments/infra/typeorm/Appointment";
 
 class AppError {
   public readonly message: string;
