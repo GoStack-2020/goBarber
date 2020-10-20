@@ -1,0 +1,3 @@
+[submodule "gobarber-web"]
+	path = gobarber-web
+	url = https://github.com/GoStack-2020/gobarber-web
