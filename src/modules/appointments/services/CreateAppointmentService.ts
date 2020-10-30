@@ -6,6 +6,7 @@ import { injectable, inject } from 'tsyringe';
 
 interface Request {
   provider_id: string;
+  user_id: string;
   date: Date;
 }
 
@@ -17,7 +18,7 @@ class CreateAppointmentService {
     private appointmentsRepository: IAppointmentsRepository,
     ) {}
 
-  public async execute({ provider_id, date }: Request): Promise<Appointment> {
+  public async execute({ provider_id, user_id, date }: Request): Promise<Appointment> {
     const appointmentDate = startOfHour(date);
 
     const findAppointmentInSameDate = await this.appointmentsRepository.findByDate(
@@ -30,6 +31,7 @@ class CreateAppointmentService {
 
     const appointment = await this.appointmentsRepository.create({
       provider_id,
+      user_id,
       date: appointmentDate,
     });
 
