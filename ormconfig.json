@@ -1,5 +1,5 @@
 [{
-        "name": "postgres",
+        "name": "default",
         "type": "postgres",
         "host": "localhost",
         "port": 5432,
@@ -18,11 +18,11 @@
     },
     {
         "name": "mongo",
-        "type": "mongo",
+        "type": "mongodb",
         "host": "localhost",
         "port": 27017,
         "database": "gobarberdb",
-        "useUnifiedTopoly": true,
+        "useUnifiedTopology": true,
         "entities": [
             "./src/modules/**/infra/typeorm/schemas/*.ts"
         ]
