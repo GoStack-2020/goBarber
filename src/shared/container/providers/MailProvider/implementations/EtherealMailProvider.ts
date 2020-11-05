@@ -1,5 +1,5 @@
 import nodemailer, { Transporter } from 'nodemailer';
-import IMailProvider from '../models/MailProvider';
+import IMailProvider from '../models/IMailProvider';
 import ISendMailDTO from '../dtos/ISendMailDTO';
 import { inject, injectable } from 'tsyringe';
 
