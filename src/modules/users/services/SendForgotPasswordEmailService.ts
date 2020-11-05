@@ -2,7 +2,7 @@ import { inject, injectable } from 'tsyringe';
 import path from 'path';
 import IUsersRepository from '../repositories/IUsersRepository';
 import IUserTokensRepository from '../repositories/IUserTokensRepository';
-import IMailProvider from '@shared/container/providers/MailProvider/models/MailProvider';
+import IMailProvider from '@shared/container/providers/MailProvider/models/IMailProvider';
 import AppError from '@shared/errors/AppError';
 
 interface IRequest {
