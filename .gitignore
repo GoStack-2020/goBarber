@@ -3,4 +3,4 @@
 !tmp/.gitkeep
 .env
 ormconfig.json
-coverage
+/coverage
