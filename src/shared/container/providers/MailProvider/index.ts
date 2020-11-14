@@ -9,6 +9,6 @@ const providers = {
 };
 
 container.registerInstance<IMailProvider>(
-  'IMailProvider',
+  'MailProvider',
   container.resolve(EtherealMailProvider),
 );
